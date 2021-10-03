@@ -1,6 +1,39 @@
-@import "variables.css";
+@font-face {
+    font-family: "Glory Light";
+    src: url("../../public/Glory-Light.ttf") format("truetype");
+}
 
-body { background: var(--background-color); }
+.background-primary { background-color: #FADF08; }
+.background-secondary { background-color: #FA7208; }
+.background-default { background-color: #000000; }
+.background-gradient { background: linear-gradient(90deg, #FADF08, #FA7208); }
 
-.text-primary { color: var(--primary-color); }
-.text-secondary { color: var(--secondary-color); }
+body {
+    margin: 0;
+    font-family: "Glory Light";
+}
+
+.large-container {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.navbar {
+    height: 50px;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar > nav > ul > li {
+    text-decoration: none;
+    display: inline;
+}
+
+.navbar > nav > ul > li > a {
+    text-decoration: none;
+}
+
+.align-right {
+    align-items: end;
+}
