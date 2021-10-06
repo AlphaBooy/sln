@@ -2,7 +2,7 @@
 
 .featured-item {
     width: 20%;
-    justify-items: center;
+    justify-content: center;
     border: solid 1px black;
     padding-left: 10px;
     padding-right: 10px;
@@ -22,7 +22,6 @@
 }
 
 .items-carrousel {
-    display: block;
     margin-left: 10px;
     margin-right: 10px;
     width: 100%;
@@ -35,4 +34,11 @@
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+}
+
+.description {
+    height: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
