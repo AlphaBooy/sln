@@ -1,10 +1,38 @@
-@charset "utf-8";
 @import "../../utils/styles/globalStyle.css";
-@import "../../utils/styles/variables.css";
 
-.featured-image {
-  border: solid 1px black;
+.featured-item {
+    width: 20%;
+    justify-items: center;
+    border: solid 1px black;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.image-carrousel {
-  border: solid 1px black;
+
+.featured-item > .title {
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.legend {
+    font-size: 0.8rem;
+}
+
+.items-carrousel {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    border: solid 1px black;
+}
+
+.items-carrousel-images , .items-carrousel-titles {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 }

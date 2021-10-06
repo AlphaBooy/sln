@@ -1,9 +1,9 @@
 <div class="navbar background-gradient">
+    <span class="logo"><a href="../index.php?action=index">SLN</a></span>
     <nav>
         <ul>
-            <li><a href="../index.php?action=index">SLN</a></li>
-            <li class="align-right"><a href="../index.php?action=register">Register</a></li>
-            <li class="align-right"><a href="../index.php?action=login">Login</a></li>
+            <li><a href="../index.php?action=register">&nbsp; Register</a></li>
+            <li><a href="../index.php?action=login">&nbsp; Login</a></li>
         </ul>
     </nav>
 </div>

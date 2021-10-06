@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "navbar.css";
+
 @font-face {
     font-family: "Glory Light";
     src: url("../../public/Glory-Light.ttf") format("truetype");
@@ -10,30 +13,18 @@
 
 body {
     margin: 0;
-    font-family: "Glory Light";
+    font-family: "Glory Light", sans-serif;
 }
 
 .large-container {
-    margin-left: 5%;
-    margin-right: 5%;
+    display: flex;
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
 }
 
-.navbar {
-    height: 50px;
+.inline-container {
     display: inline-flex;
     width: 100%;
-    align-items: center;
-}
-
-.navbar > nav > ul > li {
-    text-decoration: none;
-    display: inline;
-}
-
-.navbar > nav > ul > li > a {
-    text-decoration: none;
-}
-
-.align-right {
-    align-items: end;
 }

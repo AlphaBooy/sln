@@ -5,5 +5,8 @@ require_once "../utils/header.php";
 require_once "../utils/navbar.php";
 // Include the HTML + CSS part of the HOME page
 require_once "../view/home/homeView.html";
+?><style><?php
+    require_once "../view/home/homeStyle.css";
+?></style><?php
 // Include the footer part of the HTML document (closing brackets mainly)
 require_once "../utils/footer.php";
