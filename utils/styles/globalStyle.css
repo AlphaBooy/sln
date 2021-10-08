@@ -11,19 +11,19 @@
 .background-default { background-color: #000000; }
 .background-gradient { background: linear-gradient(90deg, #FADF08, #FA7208); }
 
+.text-primary { color: #FADF08 }
+.text-secondary { color: #FA7208 }
+
 body {
     margin: 0;
     font-family: "Glory Light", sans-serif;
 }
 
 .large-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
     width: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
     margin-top: 10px;
-}
-
-.inline-container {
-    display: inline-flex;
-    width: 100%;
 }

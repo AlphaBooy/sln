@@ -1,11 +1,13 @@
-@import "../../utils/styles/globalStyle.css";
-
 .featured-item {
-    width: 20%;
+    max-width: 15%;
+    height: 70vh;
     justify-content: center;
-    border: solid 1px black;
+    border: solid 1px #FADF08;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 25px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .featured-item > .title {
@@ -18,14 +20,15 @@
 }
 
 .legend {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
+.title { font-size: 1.5rem }
+
 .items-carrousel {
-    margin-left: 10px;
-    margin-right: 10px;
     width: 100%;
-    border: solid 1px black;
+    height: 35vh;
+    border: solid 1px #FADF08;
 }
 
 .items-carrousel-images , .items-carrousel-titles {
@@ -37,8 +40,11 @@
 }
 
 .description {
-    height: 5rem;
+    position: relative;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: justify;
 }
+.twitter { color: #00acee; }
+.insta { color: #FD1D1D; }

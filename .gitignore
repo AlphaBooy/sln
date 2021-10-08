@@ -1,2 +1,9 @@
 
 .idea/
+
+public/fontawesome/less
+public/fontawesome/metadata
+public/fontawesome/scss
+public/fontawesome/sprites
+public/fontawesome/svgs
+public/fontawesome/webfonts
