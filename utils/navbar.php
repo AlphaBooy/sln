@@ -1,5 +1,5 @@
 <div class="navbar background-gradient">
-    <span class="logo"><a href="../index.php?action=index">SLN</a></span>
+    <span class="logo"><a href="../index.php?action=index"><img src="../public/resources/image/logo.png" class="logo"></a></span>
     <nav>
         <ul>
             <li><a href="../index.php?action=register" class="btn-navbar"><i class="fas fa-user-plus"></i> &nbsp; Register</a></li>
