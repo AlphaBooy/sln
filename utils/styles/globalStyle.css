@@ -73,6 +73,7 @@ a:hover {
 /*-------------------------------------- Width shortcuts (inspired by Bootstrap) -------------------------------------*/
 .w-5   { width: 5% }
 .w-10  { width: 10% }
+.w-20  { width: 20% }
 .w-25  { width: 25% }
 .w-50  { width: 50% }
 .w-75  { width: 75% }
@@ -97,6 +98,10 @@ body {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.column {
+    flex-direction: column;
 }
 
 .logo {
