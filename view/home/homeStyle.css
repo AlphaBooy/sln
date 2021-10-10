@@ -1,8 +1,8 @@
 .featured-item {
-    max-width: 15%;
-    height: 70vh;
+    max-width: 20%;
+    height: 75vh;
     justify-content: center;
-    border: solid 1px #FADF08;
+    border: solid 1px var(--primary-color);
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 25px;
@@ -28,7 +28,7 @@
 .items-carrousel {
     width: 100%;
     height: 35vh;
-    border: solid 1px #FADF08;
+    border: solid 1px var(--primary-color);
 }
 
 .items-carrousel-images , .items-carrousel-titles {
@@ -46,5 +46,10 @@
     text-overflow: ellipsis;
     text-align: justify;
 }
-.twitter { color: #00acee; }
-.insta { color: #FD1D1D; }
+
+.news {
+    display: inline-flex;
+    width: 100%;
+    border: solid var(--primary-color);
+    border-radius: 5px;
+}

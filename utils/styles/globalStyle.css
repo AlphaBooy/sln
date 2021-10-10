@@ -1,46 +1,51 @@
 @charset "utf-8";
+@import "variables.css";
 @import "navbar.css";
+@import "forms.css";
 
 @font-face {
     font-family: "Glory Light";
     src: url("../../public/Glory-Light.ttf") format("truetype");
 }
 
-/* Background relative settings (on colors, gradient...) */
-.background-primary { background-color: #FADF08; }
-.background-secondary { background-color: #FA7208; }
+/*------------------------------ Background relative settings (on colors, gradient...) -------------------------------*/
+.background-primary { background-color: var(--primary-color); }
+.background-secondary { background-color: var(--secundary-color); }
 .background-default { background-color: #000000; }
-.background-gradient { background: linear-gradient(90deg, #FADF08, #FA7208); }
+.background-gradient { background: linear-gradient(90deg, var(--primary-color), var(--secundary-color)); }
 
-/* Text properties (focus on colors and alignment) */
-.text-primary { color: #FADF08 }
-.text-secondary { color: #FA7208 }
+/*------------------------------- Text properties (focus on colors and alignment) ------------------------------------*/
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secundary-color); }
+/* Brands relative colors for texts */
+.twitter { color: var(--twitter-color); }
+.insta { color: var(--instagram-color); }
 
 .text-centered { text-align: center }
 .text-justify { text-align: justify }
 
 .text-small { font-size: 0.8rem }
 
-/* Buttons properties */
-.btn-primary { background-color: #FADF08 }
-.btn-secondary { background-color: #FA7208 }
+/*----------------------------------------------- Buttons properties -------------------------------------------------*/
+.btn-primary { background-color: var(--primary-color); }
+.btn-secondary { background-color: var(--secundary-color); }
 
 button { height: 2.5rem; border-radius: 5px; border: solid black 2px; }
 button:hover, .button:focus {
     background-color: transparent;
-    color: #FADF08;
-    border: #FADF08 solid 2px;
+    color: var(--primary-color);
+    border: var(--primary-color) solid 2px;
     transition: all 280ms ease-in-out;
 }
 
-/* Border properties, colors and shape modifications */
+/*--------------------------------- Border properties, colors and shape modifications --------------------------------*/
 .border { border: solid 1px black }
-.border-primary { border: solid 1px #FADF08; }
-.border-secondary { border: solid 1px #FA7208; }
+.border-primary { border: solid 1px var(--primary-color); }
+.border-secondary { border: solid 1px var(--secundary-color); }
 
 .border-radius { border-radius: 10px }
 
-/* Links relative properties */
+/*------------------------------------------- Links relative properties ----------------------------------------------*/
 a {
     color: inherit;
     text-decoration: underline 0.15em rgba(255, 255, 255, 0);
@@ -51,7 +56,7 @@ a:hover {
     text-decoration-color: inherit;
 }
 
-/* Margins shortcuts (inspired by Bootstrap) */
+/*------------------------------------- Margins shortcuts (inspired by Bootstrap) ------------------------------------*/
 .mt-0 { margin-top: 0; }    .mt-10 { margin-top: 10px; }     .mt-25 { margin-top: 25px; }     .mt-50 { margin-top: 50px; }      .mt-auto { margin-top: auto; }
 .mb-0 { margin-bottom: 0; } .mb-10 { margin-bottom: 10px; }  .mb-25 { margin-bottom: 25px; }  .mb-50 { margin-bottom: 50px; }   .mb-auto { margin-bottom: auto; }
 .mr-0 { margin-right: 0; }  .mr-10 { margin-right: 10px; }   .mr-25 { margin-right: 25px; }   .mr-50 { margin-right: 50px; }    .mr-auto { margin-right: auto; }
@@ -59,12 +64,13 @@ a:hover {
 .mx-0 { margin-left: 0; margin-right: 0 } .mx-10 { margin-left: 10px; margin-right: 10px }    .mx-25 { margin-left: 25px; margin-right: 25px }    .mx-50 { margin-left: 50px; margin-right: 50px }    .mx-auto { margin-left: auto; margin-right: auto }
 .my-0 { margin-top: 0; margin-bottom: 0 } .my-10 { margin-top: 10px; margin-bottom: 10px }    .my-25 { margin-top: 25px; margin-bottom: 25px }    .my-50 { margin-top: 50px; margin-bottom: 50px }    .my-auto { margin-top: auto; margin-bottom: auto }
 
-/* Paddings shortcuts (inspired by Bootstrap) */
+/*----------------------------------- Paddings shortcuts (inspired by Bootstrap) -------------------------------------*/
 .pt-10 { padding-top: 10px; }     .pt-25 { padding-top: 25px; }     .pt-50 { padding-top: 50px; }
 .pb-10 { padding-bottom: 10px; }  .pb-25 { padding-bottom: 25px; }  .pb-50 { padding-bottom: 50px; }
 .pr-10 { padding-right: 10px; }   .pr-25 { padding-right: 25px; }   .pr-50 { padding-right: 50px; }
 .pl-10 { padding-left: 10px; }    .pl-25 { padding-left: 25px; }    .pl-50 { padding-left: 50px; }
 
+/*-------------------------------------- Width shortcuts (inspired by Bootstrap) -------------------------------------*/
 .w-5   { width: 5% }
 .w-10  { width: 10% }
 .w-25  { width: 25% }
@@ -93,11 +99,11 @@ body {
     margin-right: auto;
 }
 
-input[type=text] , input[type=password] {
-    border-radius: 5px;
-    width: 100%;
-}
-
 .logo {
     width: 5rem;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
 }

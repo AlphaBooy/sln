@@ -1,3 +1,10 @@
---primary-color: #FADF08;
---secondary-color: #FA7208;
---background-color: #000000;
+body {
+    --primary-color: #FADF08;
+    --secundary-color: #FA7208;
+
+    --error-color: #DC3545;
+    --ok-color: #28A745;
+
+    --twitter-color: #00ACEE;
+    --instagram-color: #FD1D1D;
+}

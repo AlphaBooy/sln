@@ -1,0 +1,28 @@
+/* Default style for text inputs (larger and cleaner display) */
+input[type=text] , input[type=password] {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+}
+
+input[type=text]:focus , input[type=password]:focus , input[type=text]:active , input[type=password]:active {
+    /*border: var(--primary-color) solid 2px;*/
+    outline-offset: -2px;
+    outline-color: var(--primary-color);
+}
+
+/* If a field of text  is invalid, display a red overlay to inform the user of the mistake */
+input[type=text].error , input[type=password].error , input[type=checkbox].error {
+    border: var(--error-color) solid;
+}
+
+/* If a field of text  is valid, display a green overlay to inform the user that the field is ok */
+input[type=text].ok , input[type=password].ok , input[type=checkbox].ok {
+    border: var(--ok-color) solid;
+}
+input[type=text].ok:before , input[type=password].ok:before , input[type=checkbox].ok:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f14a";
+    color: var(--ok-color);
+    font-weight: 900;
+}
