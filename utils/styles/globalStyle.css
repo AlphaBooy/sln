@@ -104,6 +104,12 @@ body {
     flex-direction: column;
 }
 
+.inline-flex { display: inline-flex; }
+
+.align-right {
+    text-align: end;
+}
+
 .logo {
     width: 5rem;
 }
