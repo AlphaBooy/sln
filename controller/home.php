@@ -6,6 +6,7 @@ session_start();
 require_once "../utils/header.php";
 // Include a navigation bar that allow the user to navigate through the site
 require_once "../utils/navbar.php";
+require_once "../utils/message.php";
 // Include the HTML + CSS part of the HOME page
 require_once "../view/home/homeView.html";
 ?><style><?php

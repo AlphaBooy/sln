@@ -45,6 +45,6 @@ function connexion() {
         } else {
             $_SESSION['role'] = 'user';
         }
-        header("Location: home.php");
+        header("Location: home.php?message=connexionSuccess");
     }
 }

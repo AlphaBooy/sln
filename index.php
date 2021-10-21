@@ -17,3 +17,10 @@ if ($action == 'register') {
 if ($action == 'login') {
     header("Location: controller/login.php");
 }
+if ($action == 'profile') {
+    header("Location: controller/profile.php");
+}
+if ($action == 'logout') {
+    session_destroy();
+    header("Location: index.php");
+}

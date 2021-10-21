@@ -38,7 +38,7 @@ function inscription() {
     $passconf = htmlspecialchars($_POST["passconf"]);
 
     // Regex verification of the mail format
-    $formatMail = '[a-zA-Z0-9._%+-]+@+[a-zA-Z0-9._%+-]+.+[a-zA-Z0-9._%+-]';
+    $formatMail = '[a-zA-Z0-9._%+-]+@+*+.+*';
     if (!preg_match( $formatMail, $mail)) {
         $error = ["mail" => "Invalid format"];
     }
