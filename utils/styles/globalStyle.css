@@ -24,7 +24,7 @@
 .text-centered { text-align: center }
 .text-justify { text-align: justify }
 
-.text-small { font-size: 0.8rem }
+.text-small { font-size: 0.8rem !important;}
 
 /*----------------------------------------------- Buttons properties -------------------------------------------------*/
 .btn-primary { background-color: var(--primary-color); }
@@ -102,6 +102,7 @@ body {
 
 .column {
     flex-direction: column;
+    max-width: 75%;
 }
 
 .inline-flex { display: inline-flex; }

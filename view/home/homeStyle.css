@@ -30,7 +30,7 @@
     border: solid 1px var(--primary-color);
 }
 
-.items-carrousel-images , .items-carrousel-titles {
+.items-carrousel-images , .items-carrousel-titles , .items-carrousel-prices {
     display: inline-flex;
     width: 100%;
     max-width: 100%;
