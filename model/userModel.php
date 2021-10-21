@@ -9,7 +9,8 @@ require_once "../utils/pdo.php";
  * @param $Password
  * @return bool|void
  */
-function newUser($pdo, $Mail, $Password) {
+function newUser($Mail, $Password) {
+    $pdo = getPDO();
     try {
         $sql = "INSERT INTO utilisateur SET Mail = ?, MotDePasse = ?";
 
