@@ -29,7 +29,7 @@ function newUser($Mail, $Password) {
  * Verify if the user provides a valid user & password that is registered in database
  * @param $pdo PDO Object used to connect to database, if null, use the default one
  * @param $mail string Mail entered by the user that is needed to connect to the application
- * @return false|PDOStatement|void
+ * @return boolean true only if the user match the password in db
  */
 function isCredentialsOK($pdo, $mail) {
     /* If no PDO is given when calling the function, use this one instead */

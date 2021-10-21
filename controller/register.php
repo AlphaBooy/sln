@@ -2,6 +2,12 @@
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*                                          HTML construction of the page                                             */
 /*--------------------------------------------------------------------------------------------------------------------*/
+
+session_start();
+
+// If the user is already logged, redirect him to the home page
+if (isset($_SESSION['mail'])) header("Location: home.php");
+
 // Include the top of the HTML file (header + html brackets...)
 require_once "../utils/header.php";
 // Include a navigation bar that allow the user to navigate through the site

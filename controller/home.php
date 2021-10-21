@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 // Include the top of the HTML file (header + html brackets...)
 require_once "../utils/header.php";
 // Include a navigation bar that allow the user to navigate through the site
