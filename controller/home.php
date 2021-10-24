@@ -11,6 +11,9 @@ require_once "../utils/message.php";
 require_once "../view/home/homeView.html";
 ?><style><?php
     require_once "../view/home/homeStyle.css";
-?></style><?php
+?></style>
+<script><?php
+require_once "../view/home/homeScript.js";
+?></script><?php
 // Include the footer part of the HTML document (closing brackets mainly)
 require_once "../utils/footer.php";
