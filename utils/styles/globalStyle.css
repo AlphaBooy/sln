@@ -17,9 +17,13 @@
 /*------------------------------- Text properties (focus on colors and alignment) ------------------------------------*/
 .text-primary { color: var(--primary-color); }
 .text-secondary { color: var(--secundary-color); }
+.text-light { color: var(--light-color); }
 /* Brands relative colors for texts */
 .twitter { color: var(--twitter-color); }
 .insta { color: var(--instagram-color); }
+.youtube { color: var(--youtube-color); }
+.pinterest { color: var(--pinterest-color); }
+.facebook { color: var(--facebook-color); }
 
 .text-centered { text-align: center }
 .text-justify { text-align: justify }
@@ -36,6 +40,11 @@ button:hover, .button:focus {
     color: var(--primary-color);
     border: var(--primary-color) solid 2px;
     transition: all 280ms ease-in-out;
+}
+
+.btn-secondary:hover , .btn-secondary:focus {
+    color: var(--secundary-color);
+    border: var(--secundary-color) solid 2px;
 }
 
 /*--------------------------------- Border properties, colors and shape modifications --------------------------------*/
@@ -79,6 +88,16 @@ a:hover {
 .w-75  { width: 75% }
 .w-100 { width: 100% }
 
+.image {
+    max-width: 100%;
+    min-height: 158px;
+    height: auto;
+}
+
+.categories { background-color: var(--light-color); border-radius: 5px; }
+.categories:before { content: " " }
+.categories:after { content: " " }
+
 body {
     margin: 0;
     font-family: "Glory Light", sans-serif;
@@ -93,9 +112,16 @@ body {
     margin-top: 10px;
 }
 
-.centered-container {
+.little-centered-container {
     width: 50%;
     max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-container {
+    width: 75%;
+    max-width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -106,6 +132,7 @@ body {
 }
 
 .inline-flex { display: inline-flex; }
+.space-evenly { justify-content: space-evenly }
 
 .align-right {
     text-align: end;
