@@ -44,3 +44,65 @@ function isCredentialsOK($pdo, $mail) {
         $e -> getMessage();
     }
 }
+
+/**
+ * Takes all NFT informations
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @return all NFT
+ */
+function allNFT() {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT N.*, J.PseudonymeCreateur, J.Insta, J.Twitter, C.*, T.NomCategorie FROM CryptoMonnaie C, Catégorie T,  NFT N, Créateur J WHERE N.id_Crypto = C.id AND N.id_Créateur = J.id AND N.id_Catégorie=T.id;";
+		$request = $pdo->prepare($sql);
+		$request->execute();
+		$result = $request->fetchAll();
+		return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function oneNFT($nomNFT) {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT N.*, J.PseudonymeCreateur, J.Insta, J.Twitter, C.* FROM CryptoMonnaie C, NFT N, Créateur J WHERE N.id_Crypto = C.id AND N.id_Créateur = J.id AND N.Nom LIKE :nom;";
+		$request = $pdo->prepare($sql);
+		$request->execute(['nom' => $nomNFT]);
+		$result = $request->fetch();
+        return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function targetNFT($target) {
+    /* If no PDO is given when calling the function, use this one instead */
+    $pdo = getPDO();
+    try {
+        $sql = "SELECT N.*, J.PseudonymeCreateur, J.Insta, J.Twitter, C.*, Cat.NomCategorie FROM CryptoMonnaie C, NFT N, Créateur J, Catégorie Cat WHERE N.id_Crypto = C.id AND N.id_Créateur = J.id AND N.target = :target AND N.id_Catégorie = Cat.id;";
+        $request = $pdo->prepare($sql);
+        $request->execute(['target' => $target]);
+        $result = $request->fetch();
+        return $result;
+
+    } catch(PDOException $e) {
+        $e -> getMessage();
+    }
+}

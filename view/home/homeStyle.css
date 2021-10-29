@@ -53,8 +53,8 @@
 .carou-image.next , .carou-title.next , .carou-price.next {
     z-index: 800;
 }
-.carou-image.prev , .carou-title.prev , .carou-price.prev { transform: translateX(-100%); }
-.carou-image.next , .carou-title.next , .carou-price.next { transform: translateX(100%); }
+.carou-image.prev , .carou-title.prev , .carou-price.prev { transform: translateX(-20%); }
+.carou-image.next , .carou-title.next , .carou-price.next { transform: translateX(20%); }
 
 .button-carrousel {
     font-size: 2rem;
