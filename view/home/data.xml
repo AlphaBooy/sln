@@ -1,0 +1,46 @@
+<PHOTOS>
+    <NEW>
+        <IMAGE>
+            <name>Doge Collection</name>
+            <src>doge.png</src>
+            <href>doge</href>
+            <alt>A beautiful collection of the nicest dogos !</alt>
+            <price>10 000 DOGE</price>
+        </IMAGE>
+        <IMAGE>
+            <name>Disaster Girl</name>
+            <src>disaster-girl.jpg</src>
+            <href>disgirl</href>
+            <alt>An old meme that have forged the internet culture has we now it nowadays.</alt>
+            <price>500 000 EUR</price>
+        </IMAGE>
+        <IMAGE>
+            <name>Nyan Cat</name>
+            <src>nyancat.gif</src>
+            <href>nyancat</href>
+            <alt>The official Nyan Cat GIF for sale !</alt>
+            <price>300 ETH</price>
+        </IMAGE>
+        <IMAGE>
+            <name>ASTRO</name>
+            <src>astro.jpg</src>
+            <href>astro</href>
+            <alt>A nice deformation of a cool astronaut.</alt>
+            <price>12 ETH</price>
+        </IMAGE>
+        <IMAGE>
+            <name>Abstract</name>
+            <src>abstract.png</src>
+            <href>abstract</href>
+            <alt>An abstract portrait of a famous woman painting.</alt>
+            <price>100 ETH</price>
+        </IMAGE>
+        <IMAGE>
+            <name>Beeple</name>
+            <src>beeple.jpg</src>
+            <href>beeple</href>
+            <alt>A famous beeple's numeric painting of a colorful manor.</alt>
+            <price>1 BTC</price>
+        </IMAGE>
+    </NEW>
+</PHOTOS>

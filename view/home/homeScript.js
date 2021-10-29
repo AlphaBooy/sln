@@ -1,29 +1,44 @@
-var images = document.getElementsByClassName("carou-image"),
-    titles = document.getElementsByClassName("carou-title"),
-    prices = document.getElementsByClassName("carou-price"),
-    totalItems = images.length,
-    slide = 0,
-    moving = true;
+let images = document.getElementsByClassName("carou-image");
+let titles = document.getElementsByClassName("carou-title");
+let prices = document.getElementsByClassName("carou-price");
+let totalItems = 0;
+let slide = 0;
+let moving = true;
 
-function setInitialClasses() {
-    images[totalItems - 1].classList.add("prev");
-    titles[totalItems - 1].classList.add("prev");
-    prices[totalItems - 1].classList.add("prev");
-    for (let i = 0; i < 4; i++) {
-        images[i].classList.add("active");
-        titles[i].classList.add("active");
-        prices[i].classList.add("active");
-    }
-    images[5].classList.add("next");
-    titles[5].classList.add("next");
-    prices[5].classList.add("next");
-}
+async function loadXMLDoc() {
+    let xmlhttp = new XMLHttpRequest();
+    let carrouselContent = "",
+        carrouselTitles = "",
+        carrouselPrices = "";
 
-function setEventListeners() {
-    var next = document.getElementsByClassName('btn-next')[0],
-        prev = document.getElementsByClassName('btn-prev')[0];
-    next.addEventListener('click', moveNext);
-    prev.addEventListener('click', movePrev);
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            if (xmlhttp.status === 200) {
+                images = xmlhttp.responseXML.getElementsByTagName("IMAGE");
+                for (let i = 0; i < images.length; i++) {
+                    carrouselContent += "<a href='nft.php?target=" + images[i].getElementsByTagName("href")[0].childNodes[0].nodeValue + "' class='w-20 carou-image'>" +
+                        "                       <div class='image-link-container'>" +
+                        "                           <img src='../../nft/" + images[i].getElementsByTagName("src")[0].childNodes[0].nodeValue + "' class='image image-carroussel' alt='" + images[i].getElementsByTagName("alt")[0].childNodes[0].nodeValue + "'>" +
+                        "                           <button class='btn btn-secondary image-carroussel-text w-50'>Details</button>" +
+                        "                       </div>" +
+                        "                  </a>";
+                    carrouselTitles += "<h3 class='title text-primary w-20 my-10 carou-title'>" + images[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</h3>"
+                    carrouselPrices += "<h3 class='text-small w-20 carou-price'>" + images[i].getElementsByTagName("price")[0].childNodes[0].nodeValue + " <i class='fab fa-ethereum'></i></h3>"
+                }
+                document.getElementById("carrousel-new-images").innerHTML = "<button class='button-carrousel btn-prev w-5'><i class='fas fa-angle-left'></i></button>" + carrouselContent + "<button class='button-carrousel btn-next w-5'><i class='fas fa-angle-right'></i></button>";
+                document.getElementById("carrousel-new-titles").innerHTML = "<span class='w-5'>&nbsp;</span>" + carrouselTitles + "<span class='w-5'>&nbsp;</span>"
+                document.getElementById("carrousel-new-prices").innerHTML = "<span class='w-5'>&nbsp;</span>" + carrouselPrices + "<span class='w-5'>&nbsp;</span>"
+
+                images = document.getElementsByClassName("carou-image");
+                titles = document.getElementsByClassName("carou-title");
+                prices = document.getElementsByClassName("carou-price");
+                totalItems = images.length;
+            }
+        }
+    };
+
+    xmlhttp.open("GET", "../view/home/data.xml", false);
+    xmlhttp.send();
 }
 
 function moveNext() {
@@ -97,10 +112,26 @@ function moveCarouselTo(slide) {
     }
 }
 
-function initCarousel() {
-    setInitialClasses();
-    setEventListeners();
+async function initCarousel() {
+    images[totalItems - 1].classList.add("prev");
+    titles[totalItems - 1].classList.add("prev");
+    prices[totalItems - 1].classList.add("prev");
+    for (let i = 0; i < 4; i++) {
+        images[i].classList.add("active");
+        titles[i].classList.add("active");
+        prices[i].classList.add("active");
+    }
+    images[5].classList.add("next");
+    titles[5].classList.add("next");
+    prices[5].classList.add("next");
+
+    let next = document.getElementsByClassName('btn-next')[0],
+        prev = document.getElementsByClassName('btn-prev')[0];
+    next.addEventListener('click', moveNext);
+    prev.addEventListener('click', movePrev);
+
     moving = false;
+
 }
 
-initCarousel();
+loadXMLDoc().then(r => initCarousel());

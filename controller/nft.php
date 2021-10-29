@@ -2,6 +2,7 @@
 
 session_start();
 
+require_once "../utils/input.php";
 require_once "../model/userModel.php";
 require_once "../model/nft.php";
 require_once "../model/crypto.php";
@@ -21,5 +22,3 @@ require_once "../view/nft/nftView.php";
 ?></style><?php
 // Include the footer part of the HTML document (closing brackets mainly)
 require_once "../utils/footer.php";
-
-var_dump($nft);
