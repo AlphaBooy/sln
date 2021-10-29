@@ -106,3 +106,88 @@ function targetNFT($target) {
         $e -> getMessage();
     }
 }
+
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function accountProprietaire($mail) {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT P.* FROM Compte C, Propriétaire P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
+		$request = $pdo->prepare($sql);
+		$request->execute(['mail' => $mail]);
+		$result = $request->fetch();
+		return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function accountCreator($mail) {
+    /* If no PDO is given when calling the function, use this one instead */
+    $pdo = getPDO();
+    try {
+        $sql = "SELECT P.* FROM Compte C, Créateur P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
+        $request = $pdo->prepare($sql);
+        $request->execute(['mail' => $mail]);
+        $result = $request->fetch();
+        return $result;
+
+    } catch(PDOException $e) {
+        $e -> getMessage();
+    }
+}
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function NftByCreator($id) {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT N.* FROM NFT N, Créateur C WHERE C.id=N.id_Créateur AND C.id=:id;";
+		$request = $pdo->prepare($sql);
+		$request->execute(['id' => $id]);
+		$result = $request->fetch();
+		return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function NftByOwner($id) {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT N.* FROM NFT N, Propriétaire P WHERE P.id=N.id_Propriétaire AND P.id=:id;";
+		$request = $pdo->prepare($sql);
+		$request->execute(['id' => $id]);
+		$result = $request->fetch();
+		return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}

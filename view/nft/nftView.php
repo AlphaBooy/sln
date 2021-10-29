@@ -23,9 +23,6 @@
                     <a href="" class="share"><i class="fas fa-2x fa-share-alt"></i></a>
                     <a href=<?=$nft["Insta"];?> class="insta"><i class="fab fa-2x fa-instagram"></i></a>
                     <a href=<?=$nft["Twitter"];?> class="twitter"><i class="fab fa-2x fa-twitter"></i></a>
-                    <a href="" class="facebook"><i class="fab fa-2x fa-facebook"></i></a>
-                    <a href="" class="pinterest"><i class="fab fa-2x fa-pinterest"></i></a>
-                    <a href="" class="youtube"><i class="fab fa-2x fa-youtube"></i></a>
                 </span>
                 <button class="btn-primary w-100">Buy it !</button>
             </div>
