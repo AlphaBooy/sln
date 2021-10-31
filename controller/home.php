@@ -13,7 +13,7 @@ require_once "../view/home/homeView.html";
     require_once "../view/home/homeStyle.css";
 ?></style>
 <script><?php
-require_once "../view/home/homeScript.js";
+    require_once "../view/home/homeScript.js";
 ?></script><?php
 // Include the footer part of the HTML document (closing brackets mainly)
 require_once "../utils/footer.php";

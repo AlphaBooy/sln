@@ -9,13 +9,12 @@ if ($compte == null) {
     $compte = accountProprietaire($_SESSION["mail"]);
     if($compte != null) {
         $typeAccount = "owner";
-        $nft = NftByOwner($compte["id"]);
+        $nfts = NftByOwner($compte["id"]);
     } else {
         $typeAccount = "other";
     }
-}
-else{
-    $nft = NftByCreator(compte["id"]);
+} else{
+    $nfts = NftByCreator(compte["id"]);
     $typeAccount = "creator";
 }
 

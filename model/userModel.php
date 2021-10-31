@@ -31,18 +31,23 @@ function newUser($Mail, $Password) {
  * @param $mail string Mail entered by the user that is needed to connect to the application
  * @return boolean true only if the user match the password in db
  */
-function isCredentialsOK($pdo, $mail) {
+function isCredentialsOK($mail, $pass) {
     /* If no PDO is given when calling the function, use this one instead */
-    $pdo = $pdo.is_null() ? getPDO() : $pdo;
+    $pdo = getPDO();
     try {
         $sql = "SELECT Mail, MotDePasse FROM Compte WHERE Mail = :mail";
         $request = $pdo->prepare($sql);
         $request->execute(['mail' => $mail]);
-        return $request;
+        $result = $request->fetch();
+        return $result['MotDePasse'] === $pass;
 
     } catch(PDOException $e) {
         $e -> getMessage();
     }
+}
+
+function isUserAdmin($user) {
+    return false;
 }
 
 /**
@@ -118,7 +123,7 @@ function accountProprietaire($mail) {
 	/* If no PDO is given when calling the function, use this one instead */
 	$pdo = getPDO();
 	try {
-		$sql = "SELECT P.* FROM Compte C, Propriétaire P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
+		$sql = "SELECT P.*, C.* FROM Compte C, Propriétaire P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
 		$request = $pdo->prepare($sql);
 		$request->execute(['mail' => $mail]);
 		$result = $request->fetch();
@@ -140,7 +145,7 @@ function accountCreator($mail) {
     /* If no PDO is given when calling the function, use this one instead */
     $pdo = getPDO();
     try {
-        $sql = "SELECT P.* FROM Compte C, Créateur P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
+        $sql = "SELECT P.*, C.* FROM Compte C, Créateur P WHERE C.Mail = :mail AND P.id_Compte = C.id;";
         $request = $pdo->prepare($sql);
         $request->execute(['mail' => $mail]);
         $result = $request->fetch();
@@ -163,7 +168,7 @@ function NftByCreator($id) {
 		$sql = "SELECT N.* FROM NFT N, Créateur C WHERE C.id=N.id_Créateur AND C.id=:id;";
 		$request = $pdo->prepare($sql);
 		$request->execute(['id' => $id]);
-		$result = $request->fetch();
+		$result = $request->fetchAll();
 		return $result;
 		
 	} catch(PDOException $e) {
@@ -184,7 +189,7 @@ function NftByOwner($id) {
 		$sql = "SELECT N.* FROM NFT N, Propriétaire P WHERE P.id=N.id_Propriétaire AND P.id=:id;";
 		$request = $pdo->prepare($sql);
 		$request->execute(['id' => $id]);
-		$result = $request->fetch();
+		$result = $request->fetchAll();
 		return $result;
 		
 	} catch(PDOException $e) {

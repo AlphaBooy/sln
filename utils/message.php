@@ -9,6 +9,9 @@ function getMessage($message) {
             $message = "Connexion has been established with success";
             $messageType = "success";
             return [ "message" => $message, "messageType" => $messageType];
+            break;
+        default:
+            return "";
     }
 }
 

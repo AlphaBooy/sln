@@ -13,9 +13,9 @@
                     <p class="mx-10 text-justify"><?=$nft["Description"];?></p>
                 </div>
                 <p class="text-light mx-10"><i class="far fa-calendar-alt"></i> &nbsp; <?=convertDate($nft["DateCréation"]);?></p>
-                <span class="ml-10"><?=$nft["Prix"];?> <?=$nft["NomCrypto"];?> <?=getLogoCrypto($nft["id_Crypto"]);?></span>
-                <span class="ml-10 text-small"><?=toEuro($nft["Prix"], $nft["id_Crypto"]);?> EUR <i class="fas fa-euro-sign"></i></span>
-                <span class="ml-10 text-small"><?=toDollar($nft["Prix"], $nft["id_Crypto"]);?> USD <i class="fas fa-dollar-sign"></i></span>
+                <span class="ml-10"><?=number_format($nft["Prix"],0,','," ");?> <?=$nft["NomCrypto"];?> <?=getLogoCrypto($nft["id_Crypto"]);?></span>
+                <span class="ml-10 text-small"><?=number_format(toEuro($nft["Prix"], $nft["id_Crypto"]),0,','," ");?> EUR <i class="fas fa-euro-sign"></i></span>
+                <span class="ml-10 text-small"><?=number_format(toDollar($nft["Prix"], $nft["id_Crypto"]),0,','," ");?> USD <i class="fas fa-dollar-sign"></i></span>
                 <br/>
                 <div class="mx-10 my-25"><span><i class="fas fa-hashtag"></i></span> <?=$nft["NomCategorie"];?></div>
                 <span class="inline-flex space-evenly w-100 my-10">
