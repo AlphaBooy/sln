@@ -4,25 +4,28 @@
     </div>
 <?php } else { ?>
     <div class="little-centered-container">
-        <div class="w-50">
+        <div class="w-25">
             <img src=<?="../view/profile/profilePics/" . $compte["picture"];?> class="profile-pic my-50" alt="profile picture">
         </div>
         <div class="w-50 column">
-            <h1><?=$compte["PseudonymeProprietaire"];?></h1>
-            <h2><?=$_SESSION["mail"];?></h2>
+            <h1 class="mt-50"><?=$compte["PseudonymeProprietaire"];?></h1>
+            <span><?=$_SESSION["mail"];?></span>
         </div>
         <div class="w-100">
+            <h2>NFT possessed : </h2>
             <?php
-            foreach ($nfts as $nft) {
-            ?>
-                <h2><?=$nft["NomNFT"];?></h2>
-                <img src=<?="../nft/" . $nft["link"];?>
-            <?php
+            if (!is_null($nfts)) {
+                foreach ($nfts as $nft) {
+                ?>
+                    <h3><?=$nft["NomNFT"];?></h3>
+                    <img src=<?="../nft/" . $nft["link"];?> class="profile_nft">
+                <?php
+                }
+            } else {
+                echo "<p>You don't have or have created any NFT yet !</p>";
             }
             ?>
         </div>
     </div>
 <?php
 }
-
-var_dump($nfts);

@@ -47,7 +47,19 @@ function isCredentialsOK($mail, $pass) {
 }
 
 function isUserAdmin($user) {
-    return false;
+    /* If no PDO is given when calling the function, use this one instead */
+    $pdo = getPDO();
+    try {
+        $sql = "SELECT * FROM Compte WHERE Mail = :mail";
+        $request = $pdo->prepare($sql);
+        $request->execute(['mail' => $mail]);
+        $result = $request->fetch();
+        var_dump($result);
+        return $result['admin'] === 1;
+
+    } catch(PDOException $e) {
+        $e -> getMessage();
+    }
 }
 
 /**
@@ -165,7 +177,7 @@ function NftByCreator($id) {
 	/* If no PDO is given when calling the function, use this one instead */
 	$pdo = getPDO();
 	try {
-		$sql = "SELECT N.* FROM NFT N, Créateur C WHERE C.id=N.id_Créateur AND C.id=:id;";
+		$sql = "SELECT N.* FROM NFT N, Créateur C WHERE C.id_createur = N.id_Créateur AND C.id_createur = :id;";
 		$request = $pdo->prepare($sql);
 		$request->execute(['id' => $id]);
 		$result = $request->fetchAll();
@@ -186,7 +198,7 @@ function NftByOwner($id) {
 	/* If no PDO is given when calling the function, use this one instead */
 	$pdo = getPDO();
 	try {
-		$sql = "SELECT N.* FROM NFT N, Propriétaire P WHERE P.id=N.id_Propriétaire AND P.id=:id;";
+		$sql = "SELECT N.* FROM NFT N, Propriétaire P WHERE P.id_proprietaire = N.id_Propriétaire AND P.id_proprietaire = :id;";
 		$request = $pdo->prepare($sql);
 		$request->execute(['id' => $id]);
 		$result = $request->fetchAll();

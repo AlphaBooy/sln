@@ -4,17 +4,19 @@ session_start();
 
 require_once "../model/userModel.php";
 
-$compte = accountCreator($_SESSION["mail"]);
+$mail = $_SESSION['mail'];
+
+$compte = accountCreator($mail);
 if ($compte == null) {
-    $compte = accountProprietaire($_SESSION["mail"]);
+    $compte = accountProprietaire($mail);
     if($compte != null) {
         $typeAccount = "owner";
-        $nfts = NftByOwner($compte["id"]);
+        $nfts = NftByOwner($compte["id_proprietaire"]);
     } else {
         $typeAccount = "other";
     }
-} else{
-    $nfts = NftByCreator(compte["id"]);
+} else {
+    $nfts = NftByCreator(compte["id_createur"]);
     $typeAccount = "creator";
 }
 

@@ -22,5 +22,3 @@ require_once "../view/nft/nftView.php";
 ?></style><?php
 // Include the footer part of the HTML document (closing brackets mainly)
 require_once "../utils/footer.php";
-
-var_dump($nft);

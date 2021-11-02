@@ -24,3 +24,7 @@ if ($action == 'logout') {
     session_destroy();
     header("Location: index.php");
 }
+if ($action == 'addNft') {
+	session_destroy();
+	header("Location: controller/addNft.php");
+}

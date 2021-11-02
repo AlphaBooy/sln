@@ -1,3 +1,9 @@
 .profile-pic {
     border-radius: 100%;
+    width: 50%;
+}
+
+.profile_nft {
+    width: 100%;
+    height: auto;
 }

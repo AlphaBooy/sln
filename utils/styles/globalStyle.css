@@ -113,6 +113,8 @@ body {
 }
 
 .little-centered-container {
+    display: flex;
+    flex-flow: row wrap;
     width: 50%;
     max-width: 50%;
     margin-left: auto;
