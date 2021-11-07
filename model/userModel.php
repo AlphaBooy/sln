@@ -112,12 +112,11 @@ function targetNFT($target) {
     /* If no PDO is given when calling the function, use this one instead */
     $pdo = getPDO();
     try {
-        $sql = "SELECT N.*, J.PseudonymeCreateur, J.Insta, J.Twitter, C.*, Cat.NomCategorie FROM CryptoMonnaie C, NFT N, Créateur J, Catégorie Cat WHERE N.id_Crypto = C.id AND N.id_Créateur = J.id AND N.target = :target AND N.id_Catégorie = Cat.id;";
+        $sql = "SELECT N.*, J.PseudonymeCreateur, J.Insta, J.Twitter, C.*, Cat.NomCategorie FROM CryptoMonnaie C, NFT N, Créateur J, Catégorie Cat WHERE N.id_Crypto = C.id AND N.id_Créateur = J.id_Createur AND N.target = :target AND N.id_Catégorie = Cat.id;";
         $request = $pdo->prepare($sql);
         $request->execute(['target' => $target]);
         $result = $request->fetch();
         return $result;
-
     } catch(PDOException $e) {
         $e -> getMessage();
     }

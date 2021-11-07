@@ -3,10 +3,10 @@
 session_start();
 
 require_once "../utils/input.php";
-require_once "../model/userModel.php";
 require_once "../model/nft.php";
 require_once "../model/crypto.php";
 require_once "../model/createur.php";
+require_once "../model/userModel.php";
 
 $nft = targetNFT($_GET['target']);
 
