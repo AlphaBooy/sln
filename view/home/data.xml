@@ -1,46 +1,98 @@
-<PHOTOS>
-    <NEW>
-        <IMAGE>
-            <name>Doge Collection</name>
-            <src>doge.png</src>
-            <href>doge</href>
-            <alt>A beautiful collection of the nicest dogos !</alt>
-            <price>10 000 DOGE</price>
-        </IMAGE>
-        <IMAGE>
-            <name>Disaster Girl</name>
-            <src>disaster-girl.jpg</src>
-            <href>disgirl</href>
-            <alt>An old meme that have forged the internet culture has we now it nowadays.</alt>
-            <price>500 000 EUR</price>
-        </IMAGE>
-        <IMAGE>
-            <name>Nyan Cat</name>
-            <src>nyancat.gif</src>
-            <href>nyancat</href>
-            <alt>The official Nyan Cat GIF for sale !</alt>
-            <price>300 ETH</price>
-        </IMAGE>
-        <IMAGE>
-            <name>ASTRO</name>
-            <src>astro.jpg</src>
-            <href>astro</href>
-            <alt>A nice deformation of a cool astronaut.</alt>
-            <price>12 ETH</price>
-        </IMAGE>
-        <IMAGE>
-            <name>Abstract</name>
-            <src>abstract.png</src>
-            <href>abstract</href>
-            <alt>An abstract portrait of a famous woman painting.</alt>
-            <price>100 ETH</price>
-        </IMAGE>
-        <IMAGE>
-            <name>Beeple</name>
-            <src>beeple.jpg</src>
-            <href>beeple</href>
-            <alt>A famous beeple's numeric painting of a colorful manor.</alt>
-            <price>1 BTC</price>
-        </IMAGE>
-    </NEW>
-</PHOTOS>
+<IMAGES>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>Doge Collection</name>
+        <src>doge.png</src>
+        <href>doge</href>
+        <alt>A beautiful collection of the nicest dogos !</alt>
+        <price>10 000 DOGE</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>Disaster Girl</name>
+        <src>disaster-girl.jpg</src>
+        <href>disgirl</href>
+        <alt>An old meme that have forged the internet culture has we now it nowadays.</alt>
+        <price>500 000 EUR</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>Nyan Cat</name>
+        <src>nyancat.gif</src>
+        <href>nyancat</href>
+        <alt>The official Nyan Cat GIF for sale !</alt>
+        <price>300 ETH</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>ASTRO</name>
+        <src>astro.jpg</src>
+        <href>astro</href>
+        <alt>A nice deformation of a cool astronaut.</alt>
+        <price>12 ETH</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>Abstract</name>
+        <src>abstract.png</src>
+        <href>abstract</href>
+        <alt>An abstract portrait of a famous woman painting.</alt>
+        <price>100 ETH</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>NEW</tag>
+        <name>Beeple</name>
+        <src>beeple.jpg</src>
+        <href>beeple</href>
+        <alt>A famous beeple's numeric painting of a colorful manor.</alt>
+        <price>1 BTC</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>Dogecoin</name>
+        <src>doge.gif</src>
+        <href>dogegif</href>
+        <alt>A nice meme on dogecoins</alt>
+        <price>100 000 000 DOGE</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>APE</name>
+        <src>ape.png</src>
+        <href>ape</href>
+        <alt>A cool ape yatch club ape.</alt>
+        <price>231 ETH</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>DogeBoy 1</name>
+        <src>doge_collection_1.jpg</src>
+        <href>dogecoll1</href>
+        <alt>A nice meme on doge boy</alt>
+        <price>100 000 DOGE</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>DogeBoy 2</name>
+        <src>doge_collection_2.jpg</src>
+        <href>dogecoll2</href>
+        <alt>A nice meme on doge boy</alt>
+        <price>100 000 DOGE</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>DogeBoy 3</name>
+        <src>doge_collection_3.jpg</src>
+        <href>dogecoll3</href>
+        <alt>A nice meme on doge boy</alt>
+        <price>100 000 DOGE</price>
+    </IMAGE>
+    <IMAGE>
+        <tag>RECO</tag>
+        <name>DogeBoy 4</name>
+        <src>doge_collection_4.png</src>
+        <href>dogecoll4</href>
+        <alt>A nice meme on doge boy</alt>
+        <price>100 000 DOGE</price>
+    </IMAGE>
+</IMAGES>

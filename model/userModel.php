@@ -52,9 +52,8 @@ function isUserAdmin($user) {
     try {
         $sql = "SELECT * FROM Compte WHERE Mail = :mail";
         $request = $pdo->prepare($sql);
-        $request->execute(['mail' => $mail]);
+        $request->execute(['mail' => $user]);
         $result = $request->fetch();
-        var_dump($result);
         return $result['admin'] === 1;
 
     } catch(PDOException $e) {
@@ -204,6 +203,109 @@ function NftByOwner($id) {
 		$result = $request->fetchAll();
 		return $result;
 		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function AddNft($nom,$desc,$idp,$idCry,$idCre,$idCa,$prix,$target,$link) {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "INSERT INTO NFT (id,NomNFT,Description,id_Propriétaire,id_Crypto,DateCréation,id_Créateur,id_Catégorie,Prix,target,link) VALUES ('',:nom,:desc,:idp,:idCry,NOW(),:idCre,:idCa,:prix,:target,:link)";
+		$request = $pdo->prepare($sql);
+		$request->execute(['nom' => $nom,'desc' => $desc,'idp' => $idp,'idCry' => $idCry,'idCre' => $idCre,'idCa' => $idCa,'prix' => $prix,'target' => $target,'link' => $link]);
+		$result = $request->fetchAll();
+		return $result;
+		
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function getCategorie() {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT * FROM Catégorie;";
+		$request = $pdo->prepare($sql);
+		$request->execute([]);
+		$result = $request->fetchAll();
+		return $result;
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function getCrypto() {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT * FROM CryptoMonnaie;";
+		$request = $pdo->prepare($sql);
+		$request->execute([]);
+		$result = $request->fetchAll();
+		return $result;
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function getCreator() {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT * FROM Créateur;";
+		$request = $pdo->prepare($sql);
+		$request->execute([]);
+		$result = $request->fetchAll();
+		return $result;
+	} catch(PDOException $e) {
+		$e -> getMessage();
+	}
+}
+
+/**
+ * Return one NFT by a name
+ * @param $pdo PDO Object used to connect to database, if null, use the default one
+ * @param $nomNFT string name of the NFT user search
+ * @return one NFT
+ */
+function getOwner() {
+	/* If no PDO is given when calling the function, use this one instead */
+	$pdo = getPDO();
+	try {
+		$sql = "SELECT * FROM Propriétaire;";
+		$request = $pdo->prepare($sql);
+		$request->execute([]);
+		$result = $request->fetchAll();
+		return $result;
 	} catch(PDOException $e) {
 		$e -> getMessage();
 	}
